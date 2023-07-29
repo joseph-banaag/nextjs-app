@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { useState } from "react";
-import "../globals.css"
+import "../globals.css";
 
 function Square({ value, onSquareClick }: { value: any; onSquareClick: any }) {
   return (
@@ -120,7 +120,7 @@ export default function Game() {
     if (move > 0) {
       description = "Go to move #" + move;
     } else {
-      description = "Go to game start";
+      description = "Restart the game!";
     }
     return (
       <li key={move} id="move">
