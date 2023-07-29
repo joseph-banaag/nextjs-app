@@ -63,35 +63,18 @@ h6 {
   font-size: 12px;
 }
 
-code {
-  font-size: 1.2em;
-}
-
-ul {
-  padding-left: 20px;
-}
-
-
-body {
-  font-family: sans-serif;
-  margin: 20px;
-  padding: 0;
-}
 
 .square {
   background: #50206C;
   border: 1px solid #999;
-  float: left;
   font-size: 24px;
   font-weight: bold;
-  line-height: 34px;
-  height: 84px;
-  margin-right: -1px;
-  margin-top: -1px;
+  height: 4em;
   padding: 0;
-  text-align: center;
-  width: 84px;
+  width: 4em;
 }
+
+
 
 .board-row:after {
   clear: both;
@@ -119,10 +102,10 @@ body {
 
 #move {
   background-color: rgb(var(--background-start-rgb));
-  border: 2px solid grey;
+  border: 2px solid rgb(31 41 55);
   padding: .25em 2em;
   border-radius: 40px;
-  margin: .2em auto;
+  margin: .2em .5em;
 
 }
 
@@ -133,4 +116,21 @@ body {
 
 #move:first-child {
   margin-bottom: 2rem;
+}
+
+
+
+@media (max-width: 640px) {
+  .board {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .square {
+    min-width: max-content;
+    min-height: max-content;
+  }
+
+
 }

@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { useState } from "react";
+import "../globals.css"
 
 function Square({ value, onSquareClick }: { value: any; onSquareClick: any }) {
   return (
@@ -58,6 +59,7 @@ function GamePage({
 
   const winner = calculateWinner(squares);
   let status;
+  let draw = "It's a draw. Restart the game!";
   if (winner) {
     status = "Winner: " + winner;
   } else {
@@ -76,20 +78,22 @@ function GamePage({
           </h1>
         </section>
 
-        <section className="text-center items-center m-5  py-1 px-8">
-          <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
-          <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
-          <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
-        </section>
-        <section className="text-center items-center m-5  py-1 px-8">
-          <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
-          <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
-          <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
-        </section>
-        <section className="text-center items-center m-5  py-1 px-8">
-          <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
-          <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
-          <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
+        <section className="max-w-md overflow-hidden md:max-w-2xl border-collapse">
+          <section className="text-center items-center flex gap-0 border-collapse">
+            <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
+            <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
+            <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
+          </section>
+          <section className="text-center items-center flex gap-0 border-collapse">
+            <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
+            <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
+            <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
+          </section>
+          <section className="text-center items-center flex gap-0 border-collapse">
+            <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
+            <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
+            <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
+          </section>
         </section>
       </section>
     </>
@@ -133,7 +137,7 @@ export default function Game() {
 
   return (
     <>
-      <section className="flex flex-row">
+      <section className="flex flex-row lg:flex-col md:flex-col sm:flex-col xs:flex-col board">
         <section className="m-4">
           <GamePage
             xIsNext={xIsNext}
